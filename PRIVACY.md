@@ -1,8 +1,8 @@
 # HomeSort privacy policy (beta draft)
 
-_Last updated: 2026-05-07 — beta version. This document is a working draft;
-get a lawyer to review it before you take payment from anyone or expand
-beyond friends and family._
+_Last updated: 2026-05-24 — beta version. See "Beta status" near the
+bottom for the specific aspects of this policy that are still pending
+lawyer review._
 
 ## What HomeSort does
 
@@ -100,6 +100,32 @@ hosted in the AWS region you'll find listed in the app under
 `Settings → Account → Server`. Photos are stored in Supabase Storage
 in the same region.
 
+## Crash reporting
+
+When HomeSort crashes or hits an unexpected error in release builds,
+we receive a crash report via [Sentry](https://sentry.io), a
+third-party error-reporting service. Each report contains:
+
+- The type of error and a stack trace from our code.
+- Device model, Android version, free memory.
+- Which version of HomeSort was running (e.g. `1.0.0+1`).
+
+Each report does **not** contain:
+
+- Plaintext contents of your inventory — item names, notes, photos.
+  These are never written to exception messages or log lines.
+- Your email, account id, or any other personal identifier.
+- Encryption keys or decrypted data of any kind.
+
+Sentry is operated by Sentry, Inc. We use Sentry's EU (Germany)
+ingestion endpoint, so crash data is processed in the EU. Sentry's own
+privacy policy is at [sentry.io/privacy](https://sentry.io/privacy/).
+
+We don't currently expose a runtime toggle to opt out of crash
+reporting; if you don't want crashes reported, the only present
+mechanism is to uninstall the app. We may add a setting in a future
+release.
+
 ## How long we keep it
 
 For as long as your account is active. If you delete your account, we
@@ -115,8 +141,7 @@ You can:
   device you control.
 - Delete your account, which removes our copy of your data.
 - Ask us to send you whatever data we have associated with your email.
-  Email **jazz.teohyj@outlook.com** (replace this with your real address
-  before going public).
+  Email **jazz.teohyj@outlook.com**.
 
 If you're in the EU / UK, you have additional rights under GDPR. We
 honour them — emailing the support address triggers the same delete /
@@ -141,19 +166,21 @@ changes. The "Last updated" date at the top moves with each change.
 For material changes, we'll send an email to active accounts before
 the change takes effect.
 
+## Beta status
+
+HomeSort is in beta and this policy is a working draft. The following
+specific aspects have not yet been reviewed by a privacy lawyer:
+
+- Designation of a GDPR data protection officer.
+- The precise legal basis for data processing under GDPR Article 6.
+- International data transfer language covering users whose data
+  passes through infrastructure in a different jurisdiction.
+- The exact retention schedule and post-deletion timeline.
+
+We'll publish an updated, lawyer-reviewed version of this policy
+before HomeSort opens to general availability beyond the closed
+testing track.
+
 ## Contact
 
-jazz.teohyj@outlook.com (replace before launch).
-
----
-
-_Internal note for the maintainer: this is a beta draft, not a
-substitute for a real privacy policy. Things that need a lawyer's
-input before you let anyone outside friends-and-family use HomeSort
-include: the GDPR data-protection-officer designation, the precise
-legal basis for processing under GDPR Article 6, the international
-data transfer language (if you have non-EU users hitting EU servers
-or vice versa), the data retention schedule, and the precise
-deletion timeline. None of those affect engineering work, but they
-absolutely affect "can I open this beta to the public" — handle
-before you do._
+jazz.teohyj@outlook.com
